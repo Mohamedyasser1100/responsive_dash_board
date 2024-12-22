@@ -41,7 +41,7 @@ class ActiveDraweItem extends StatelessWidget {
       ),
       trailing: Container(
         width: 3.27,
-        color: Color(0xff4EB7F2),
+        color: const Color(0xff4EB7F2),
       ),
     );
   }
