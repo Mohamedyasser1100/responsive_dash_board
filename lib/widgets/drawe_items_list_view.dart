@@ -13,7 +13,7 @@ class DrawerItemsListView extends StatefulWidget {
 }
 
 class _DrawerItemsListViewState extends State<DrawerItemsListView> {
-  final List<DrawerItemModel> items = [
+  final List<DrawerItemModel> items = const [
     DrawerItemModel(title: 'Dashboard', image: Assets.imagesDashboard),
     DrawerItemModel(title: 'My Transaction', image: Assets.imagesTransaction),
     DrawerItemModel(title: 'Statistics', image: Assets.imagesStatisicts),
@@ -25,10 +25,8 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SliverList.builder(
       itemCount: items.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
