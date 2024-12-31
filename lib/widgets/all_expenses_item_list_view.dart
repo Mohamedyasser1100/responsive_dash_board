@@ -36,11 +36,12 @@ class AllExpensesItemListView extends StatelessWidget {
           return Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensisItem(itemModel: item),
+              child: AllExpensisItem(isSelected: false, itemModel: item),
             ),
           );
         } else {
-          return Expanded(child: AllExpensisItem(itemModel: item));
+          return Expanded(
+              child: AllExpensisItem(isSelected: false, itemModel: item));
         }
       }).toList(),
     );
