@@ -3,8 +3,8 @@ import 'package:responsive_dash_board/model/all_expenses+item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expensis_item.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
-  const AllExpensesItemListView({super.key});
+class AllExpensesItemListView extends StatefulWidget {
+  AllExpensesItemListView({super.key});
 
   static List<AllExpensesitemModel> items = [
     AllExpensesitemModel(
@@ -23,27 +23,54 @@ class AllExpensesItemListView extends StatelessWidget {
         date: 'April 2022',
         price: r'$20,129'),
   ];
+
+  int selectedIndex = 0;
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
       // children: items
       //     .map((e) => Expanded(child: AllExpensisItem(itemModel: e)))
       //     .toList(),
-      children: items.asMap().entries.map((e) {
+      children: AllExpensesItemListView.items.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensisItem(isSelected: false, itemModel: item),
+            child: GestureDetector(
+              onTap: () {
+                upDateIndex(index);
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensisItem(
+                    isSelected: widget.selectedIndex == index, itemModel: item),
+              ),
             ),
           );
         } else {
           return Expanded(
-              child: AllExpensisItem(isSelected: false, itemModel: item));
+            child: GestureDetector(
+              onTap: () {
+                upDateIndex(index);
+              },
+              child: AllExpensisItem(
+                  isSelected: widget.selectedIndex == index, itemModel: item),
+            ),
+          );
         }
       }).toList(),
     );
+  }
+
+  void upDateIndex(int index) {
+    setState(() {
+      widget.selectedIndex = index;
+    });
   }
 }
