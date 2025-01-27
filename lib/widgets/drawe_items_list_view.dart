@@ -13,13 +13,14 @@ class DrawerItemsListView extends StatefulWidget {
 }
 
 class _DrawerItemsListViewState extends State<DrawerItemsListView> {
-  final List<DrawerItemModel> items = const [
-    DrawerItemModel(title: 'Dashboard', image: Assets.imagesDashboard),
-    DrawerItemModel(title: 'My Transaction', image: Assets.imagesTransaction),
-    DrawerItemModel(title: 'Statistics', image: Assets.imagesStatisicts),
-    DrawerItemModel(
-        title: 'Wallet Account', image: Assets.imagesWalletaccountsvg),
-    DrawerItemModel(title: 'My Investments', image: Assets.imagesInvestment),
+  final List<DrawerItemModel> items = [
+    const DrawerItemModel(title: 'Dashboard', image: Assets.imagesDashboard),
+    const DrawerItemModel(
+        title: 'My Transaction', image: Assets.imagesTransaction),
+    const DrawerItemModel(title: 'Statistics', image: Assets.imagesStatisicts),
+    DrawerItemModel(title: 'Wallet Account', image: Assets.imagesInvestment),
+    const DrawerItemModel(
+        title: 'My Investments', image: Assets.imagesInvestment),
   ];
   int activeIndex = 0;
 
