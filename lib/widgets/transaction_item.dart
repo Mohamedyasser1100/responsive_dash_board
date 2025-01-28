@@ -10,7 +10,7 @@ class TransactionItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: Color(0xffFAFAFA),
+      color: const Color(0xffFAFAFA),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         title: Text(
@@ -19,14 +19,15 @@ class TransactionItem extends StatelessWidget {
         ),
         subtitle: Text(
           transactionModel.date,
-          style: AppStyle.styleRegular16,
+          style:
+              AppStyle.styleRegular16.copyWith(color: const Color(0xffAAAAAA)),
         ),
         trailing: Text(
           transactionModel.amount,
           style: AppStyle.styleSemiBols24.copyWith(
             color: transactionModel.isWithdrawal
-                ? Color(0xffF3735E)
-                : Color(0xff7CD87A),
+                ? const Color(0xffF3735E)
+                : const Color(0xff7CD87A),
           ),
         ),
       ),
