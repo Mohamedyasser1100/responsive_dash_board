@@ -3,6 +3,7 @@ import 'package:responsive_dash_board/model/all_expenses+item_model.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
 import 'package:responsive_dash_board/widgets/all_expensis_item.dart';
 
+// ignore: must_be_immutable
 class AllExpensesItemListView extends StatefulWidget {
   AllExpensesItemListView({super.key});
 
