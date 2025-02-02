@@ -11,7 +11,7 @@ class TransactionHistoryHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           'Transaction History',
           style: AppStyle.styleRegular20,
         ),
