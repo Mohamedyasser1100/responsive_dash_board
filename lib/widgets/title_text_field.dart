@@ -13,7 +13,7 @@ class TitleTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppStyle.styleMeduim16,
+          style: AppStyle.styleMeduim16(context),
         ),
         const SizedBox(
           height: 12,

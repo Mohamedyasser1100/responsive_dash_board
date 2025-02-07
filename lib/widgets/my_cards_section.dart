@@ -32,11 +32,11 @@ class _MyCardsSectionState extends State<MyCardsSection> {
         const SizedBox(
           height: 24,
         ),
-        const SizedBox(
+        SizedBox(
           width: 420,
           child: Text(
             'My Card',
-            style: AppStyle.styleRegular20,
+            style: AppStyle.styleRegular20(context),
           ),
         ),
         const SizedBox(
