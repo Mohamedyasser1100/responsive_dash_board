@@ -9,11 +9,8 @@ class AllExpensessAndQuickInvoiceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
       children: const [
-        SizedBox(
-          height: 40,
-        ),
         AllExpenses(),
         SizedBox(
           height: 24,

@@ -12,6 +12,7 @@ class CustomeDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.sizeOf(context).width * 0.7,
       color: Colors.white,
       child: CustomScrollView(
         slivers: [
@@ -23,13 +24,13 @@ class CustomeDrawer extends StatelessWidget {
                   subTitle: 'demo@gmail.com'),
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 8,
             ),
           ),
-          DrawerItemsListView(),
-          SliverFillRemaining(
+          const DrawerItemsListView(),
+          const SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
               children: [
