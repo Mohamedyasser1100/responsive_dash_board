@@ -12,25 +12,30 @@ class AllExpensesItemHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          padding: EdgeInsets.all(14),
-          decoration: ShapeDecoration(
-            color: imgBackGround ?? Color(0xffFAFAFA),
-            shape: OvalBorder(),
-          ),
-          child: SvgPicture.asset(
-            image,
-            colorFilter: ColorFilter.mode(
-                imgColor ?? Color(0xff4EB7F2), BlendMode.srcIn),
+        Flexible(
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              decoration: ShapeDecoration(
+                color: imgBackGround ?? const Color(0xffFAFAFA),
+                shape: const OvalBorder(),
+              ),
+              child: Center(
+                child: SvgPicture.asset(
+                  image,
+                  colorFilter: ColorFilter.mode(
+                      imgColor ?? const Color(0xff4EB7F2), BlendMode.srcIn),
+                ),
+              ),
+            ),
           ),
         ),
+        const Spacer(),
         Transform.rotate(
           angle: -1.57079633 * 2,
           child: Icon(
             Icons.arrow_back_ios_new_outlined,
-            color: imgColor == null ? Color(0xff064060) : Colors.white,
+            color: imgColor == null ? const Color(0xff064060) : Colors.white,
           ),
         ),
       ],
