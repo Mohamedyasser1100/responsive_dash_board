@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/model/item_details_model.dart';
 import 'package:responsive_dash_board/widgets/item_details.dart';
